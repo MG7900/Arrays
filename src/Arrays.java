@@ -19,6 +19,9 @@ public class Arrays {
 
         displayArray();
         sumArray();
+        averageNum();
+        maxNum();
+        minNum();
     }
 
     public void displayArray(){
@@ -46,4 +49,36 @@ public class Arrays {
 
     //hw below
 
+    public void averageNum(){
+        int Sum = 0;
+        int average;
+        for(int q=0;q < nums.length;q++){
+            Sum = Sum + nums[q];
+        }
+        average = Sum /nums.length;
+        System.out.println(average);
+    }
+
+    public void maxNum(){
+        int max = 0;
+        for(int a=0; a<nums.length;a++){
+            if(nums[a]>max){
+                max = nums[a];
+            }
+        }
+        System.out.println(max);
+        }
+
+    public void minNum(){
+        int min = 150;  //set a number above the range of numbers that you can possibly get
+        for(int b=0; b < nums.length; b++){
+            if(nums[b] < min){
+                min = nums[b];
+            }
+        }
+        System.out.println(min);
+    }
 }
+
+
+
