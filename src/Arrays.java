@@ -22,6 +22,7 @@ public class Arrays {
         averageNum();
         maxNum();
         minNum();
+        maxIndex();
     }
 
     public void displayArray(){
@@ -78,6 +79,24 @@ public class Arrays {
         }
         System.out.println(min);
     }
+
+    //todo: make a method called maxIndex that finds the index aka bucket label that has the max number in the array
+
+    public void maxIndex() {
+
+        int max = 0;
+        int indexNum = 0;   //has to start at 0
+        for (int a = 0; a < nums.length; a++) {
+            if (nums[a] > max) {
+                max = nums[a];
+                indexNum=a;
+            }
+
+        }
+        System.out.println("the bucket with the maximum is " + indexNum);
+
+    }
+
 }
 
 
