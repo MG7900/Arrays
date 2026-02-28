@@ -23,6 +23,7 @@ public class Arrays {
         maxNum();
         minNum();
         maxIndex();
+        greaterThan50();
     }
 
     public void displayArray(){
@@ -95,6 +96,18 @@ public class Arrays {
         }
         System.out.println("the bucket with the maximum is " + indexNum);
 
+    }
+
+
+
+    public void greaterThan50(){
+        int numbers_more_than_50 = 0;
+        for(int z = 0; z < nums.length; z++){
+            if(nums[z]>50){
+                numbers_more_than_50++;
+            }
+        }
+        System.out.println("There are " + numbers_more_than_50 + " numbers greater than 50!");
     }
 
 }
