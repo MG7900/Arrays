@@ -1,10 +1,12 @@
 public class Arrays {
 
     public int[] nums;
+    public Star[] stars;
 
     public static void main(String[] args) {
         System.out.println("arrays");
         new Arrays();
+
 
     }
 
@@ -12,18 +14,60 @@ public class Arrays {
 
         //ten different buckets, which are labeled 0-9
         nums = new int[10];
+        stars = new Star[7];
+
+        nums[0] = 35;
+        //below: go make a star object
+        stars[0] = new Star();
+        Star s1 = new Star();
+        s1.printInfo();
+
+        System.out.println();   //purely for line breaking
+
+        stars[0].printInfo();
+
+        System.out.println();
+
+        //todo: change s1's color and points to be different
+        //todo: call printInfo() again
+
+        s1.color = "blue";
+        s1.points = 90;
+        s1.printInfo();
+
+        stars[0].color = "orange";
+        stars[0].points = 7;
+        stars[0].printInfo();
+
+        //todo: fill all the buckets in stars with stars
+        stars[1] = new Star();  //making a new bucket every single time
+        stars[1].color = "yellow";
+        stars[1].points = 6;
+        stars[1].printInfo();
+
+//below: making a loop to fill in the buckets
+
+        for(int y = 0; y < stars.length; y++){
+            stars[y] = new Star();
+            //todo: give points a random num between 0 and 10 inclusive
+            stars[y].points = (int)(Math.random()*11);
+
+        }
+        System.out.println("experiment: " + stars[3].points);
 
         for(int x=0;x<10;x++){
             nums[x] = (int)(Math.random()*100)+1;
         }
 
         displayArray();
-        sumArray();
-        averageNum();
-        maxNum();
-        minNum();
-        maxIndex();
-        greaterThan50();
+        displayStars();
+        sumStarsPoints();
+//        sumArray();
+//        averageNum();
+//        maxNum();
+//        minNum();
+//        maxIndex();
+//        greaterThan50();
     }
 
     public void displayArray(){
@@ -108,6 +152,28 @@ public class Arrays {
             }
         }
         System.out.println("There are " + numbers_more_than_50 + " numbers greater than 50!");
+    }
+
+    //todo: make a displayStars that uses the printInfo from Star to print all the stars
+
+    public void displayStars(){
+        System.out.println();
+        for(int a = 0; a < stars.length; a++){
+            System.out.println("New Star " + a);
+            stars[a].printInfo();
+            System.out.println();
+        }
+    }
+
+
+    //homework 3/6 below
+    public void sumStarsPoints(){
+        int sum = 0;
+        for(int b = 0; b < stars.length; b++){
+            sum = sum + stars[b].points;
+        }
+        System.out.println();
+        System.out.println("Sum of Points of all stars = " + sum);
     }
 
 }
