@@ -61,7 +61,7 @@ public class Arrays {
 
         displayArray();
         displayStars();
-        sumStarsPoints();
+        sumPoints();
 //        sumArray();
 //        averageNum();
 //        maxNum();
@@ -167,7 +167,7 @@ public class Arrays {
 
 
     //homework 3/6 below
-    public void sumStarsPoints(){
+    public void sumPoints(){
         int sum = 0;
         for(int b = 0; b < stars.length; b++){
             sum = sum + stars[b].points;
